@@ -10,9 +10,10 @@ return {
 }
 function Navbar() {
   return (
-    <nav>
+    <nav className='nav-Primary'>
         <NavLink style={navLinkStyle} to='/'>Home</NavLink>
-        <NavLink style={navLinkStyle} to='/about'>About</NavLink>
+        <NavLink style={navLinkStyle} to='about'>About</NavLink>
+        <NavLink style={navLinkStyle} to='products'>Products</NavLink>
     </nav>
   )
 }

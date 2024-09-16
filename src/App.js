@@ -1,20 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './components/Home';
-import { Route, Routes } from 'react-router-dom';
-import About from './components/About';
-import Navbar from './components/Navbar/Navbar';
-import OrderSummary from './components/OrderSummary';
+import logo from "./logo.svg";
+import "./App.css";
+import Home from "./components/Home";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import About from "./components/About";
+import OrderSummary from "./components/OrderSummary";
+import NomatchFound from "./components/NomatchFound";
+import Product from "./components/Products/Product";
+import Feature from "./components/Products/Feature";
+import New from "./components/Products/New";
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-   <Routes>
-    <Route path="/" element = {<Home/>} />
-    <Route path="about" element = {<About/>} />
-    <Route path="OrderSummary" element= { <OrderSummary/>} />
-   </Routes>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="order-summary" element={<OrderSummary />} />
+        <Route path="products" element={<Product />}>
+          <Route path="featured" element={<Feature />} />
+          <Route path="new" element={<New />} />
+        </Route>
+        <Route path="*" element={<NomatchFound />} />
+      </Routes>
     </div>
   );
 }
